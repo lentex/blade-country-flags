@@ -1,0 +1,61 @@
+{
+    "name": "lentex/blade-country-flags",
+    "description": "A package to easily make use of country flags in your Laravel Blade views.",
+    "keywords": [
+        "Blade",
+        "Country flags",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/lentex/blade-country-flags",
+    "license": "MIT",
+    "require": {
+        "php": "8.4.*",
+        "blade-ui-kit/blade-icons": "^1.0",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.2",
+        "laravel/pint": "^1.21",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-type-coverage": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lentex\\BladeCountryFlags\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lentex\\BladeCountryFlags\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest",
+        "lint": "./vendor/bin/pint --test",
+        "analyse": "./vendor/bin/phpstan",
+        "ci": [
+            "@test",
+            "@lint",
+            "@analyse"
+        ],
+        "compile": "sh bin/compile.sh",
+        "coverage:type": "vendor/bin/pest --type-coverage --min=100 --memory-limit=1G",
+        "coverage": "vendor/bin/pest --coverage --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lentex\\BladeCountryFlags\\BladeCountryFlagsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

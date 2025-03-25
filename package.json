@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "devDependencies": {
+        "flag-icons": "^7.0"
+    }
+}

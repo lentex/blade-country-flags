@@ -1,0 +1,37 @@
+on: [pull_request, push]
+name: CI
+jobs:
+  run-ci:
+    strategy:
+      fail-fast: true
+
+    runs-on: [ubuntu-latest]
+    name: CI
+
+    steps:
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+
+      - uses: actions/checkout@v3
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install composer dependencies
+        run: |
+          composer install --prefer-dist --no-progress --no-suggest
+        env:
+          COMPOSER_ALLOW_SUPERUSER: 1
+
+      - name: Run Testsuite
+        run: composer run-script test
+
+      - name: Run Linting
+        run: composer run-script lint
+
+      - name: Run Static Analysis
+        run: composer run-script analyse
+
+      - name: Run Type Coverage
+        run: composer run-script coverage:type
