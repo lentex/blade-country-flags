@@ -30,6 +30,9 @@
             "Lentex\\BladeCountryFlags\\Tests\\": "tests/"
         }
     },
+    "replace": {
+        "stijnvanouplines/blade-country-flags": "*"
+    },
     "scripts": {
         "test": "./vendor/bin/pest",
         "lint": "./vendor/bin/pint --test",
