@@ -9,7 +9,7 @@
     "homepage": "https://github.com/lentex/blade-country-flags",
     "license": "MIT",
     "require": {
-        "php": "8.4.*",
+        "php": "8.4.* | 8.5.*",
         "blade-ui-kit/blade-icons": "^1.0",
         "illuminate/support": "^12.0"
     },
@@ -17,8 +17,8 @@
         "larastan/larastan": "^3.2",
         "laravel/pint": "^1.21",
         "orchestra/testbench": "^10.0",
-        "pestphp/pest": "^3.0",
-        "pestphp/pest-plugin-type-coverage": "^3.4"
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-type-coverage": "^4.0"
     },
     "autoload": {
         "psr-4": {

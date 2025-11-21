@@ -4,6 +4,8 @@ jobs:
   run-ci:
     strategy:
       fail-fast: true
+      matrix:
+        php: [ "8.4", "8.5" ]
 
     runs-on: [ubuntu-latest]
     name: CI
@@ -11,7 +13,7 @@ jobs:
     steps:
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.4
+          php-version: ${{ matrix.php }}
 
       - uses: actions/checkout@v3
 
