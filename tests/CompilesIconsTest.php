@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-uses(Lentex\BladeCountryFlags\Tests\TestCase::class);
+use Lentex\BladeCountryFlags\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('compiles a single anonymous component', function () {
     $result = svg('flag-4x3-be')->toHtml();
